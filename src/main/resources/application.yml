@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+spring:
+  hazelcast:
+    config: classpath:my-hazelcast.xml
+  cache:
+    type: hazelcast
