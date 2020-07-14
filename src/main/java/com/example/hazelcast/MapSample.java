@@ -1,12 +1,12 @@
 package com.example.hazelcast;
 
-import com.hazelcast.client.HazelcastClient;
+/*import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.core.IMap;
+import com.hazelcast.core.IMap;*/
 
 public class MapSample {
     public static void main(String[] args) {
-        // Start the Hazelcast Client and connect to an already running Hazelcast Cluster on 127.0.0.1
+        /*// Start the Hazelcast Client and connect to an already running Hazelcast Cluster on 127.0.0.1
         HazelcastInstance hz = HazelcastClient.newHazelcastClient();
         // Get the Distributed Map from Cluster.
         IMap map = hz.getMap("my-distributed-map");
@@ -17,6 +17,6 @@ public class MapSample {
         map.putIfAbsent("somekey", "somevalue");
         map.replace("key", "value", "newvalue");
         // Shutdown this Hazelcast client
-        hz.shutdown();
+        hz.shutdown();*/
     }
 }

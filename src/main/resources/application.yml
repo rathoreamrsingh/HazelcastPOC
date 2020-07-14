@@ -1,8 +1,8 @@
 server:
-  port: 8080
+  port: 8081
 
-spring:
-  hazelcast:
-    config: classpath:my-hazelcast.xml
-  cache:
-    type: hazelcast
+#spring:
+#  hazelcast:
+#    config: classpath:bk_hazelcast-client_bk.xml
+#  cache:
+#    type: hazelcast

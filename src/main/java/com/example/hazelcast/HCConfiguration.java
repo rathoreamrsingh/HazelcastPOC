@@ -1,55 +1,59 @@
 package com.example.hazelcast;
 
-import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.client.config.ClientConfig;
 import com.hazelcast.config.Config;
-import com.hazelcast.config.EvictionPolicy;
-import com.hazelcast.config.MapConfig;
-import com.hazelcast.config.MaxSizeConfig;
-import com.hazelcast.core.HazelcastInstance;
+
+import com.hazelcast.config.NetworkConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class HCConfiguration {
 //    @Bean
-//    public Config hazelCastConfig() {
-//        return new Config()
-//                .setInstanceName("hazelcast-instance")
+//    public Config hazelCastConfig(){
+//        Config config = new Config();
+//        config.setInstanceName("hazelcast-instance")
 //                .addMapConfig(
 //                        new MapConfig()
-//                                .setName("employees")
+//                                .setName("configuration")
 //                                .setMaxSizeConfig(new MaxSizeConfig(200, MaxSizeConfig.MaxSizePolicy.FREE_HEAP_SIZE))
 //                                .setEvictionPolicy(EvictionPolicy.LRU)
-//                                .setTimeToLiveSeconds(20));
+//                                .setTimeToLiveSeconds(-1))
+//                                ;
+//        return config;
 //    }
 
+//    @Bean
+//    ClientConfig config() {
+////        Config config = new Config();
+//        ClientConfig config = new ClientConfig();
+////        config.setClassLoader(Thread.currentThread().getContextClassLoader());
+////        NetworkConfig networkConfig = config.getNetworkConfig();
+////        networkConfig.getJoin().getTcpIpConfig().setEnabled(false);
+////        networkConfig.getJoin().getMulticastConfig().setEnabled(false);
+////        networkConfig.getJoin().getKubernetesConfig().setEnabled(true)
+////                .setProperty("namespace", "default")
+////                .setProperty("service-name", "my-release-hazelcast-0");
+////        config.getNetworkConfig().setSm
+//        //config.getNetworkConfig().add
+////        config.getNetworkConfig().getJoin().getMulticastConfig().setEnabled(false);
+////        config.getNetworkConfig().getKubernetesConfig().setEnabled(true)
+////                .setProperty("namespace", "MY-KUBERNETES-NAMESPACE")
+////                .setProperty("service-name", "MY-SERVICE-NAME");
+//
+////        networkConfig.setSmar
+//        config.getNetworkConfig().setSmartRouting(false);
+//        config.getNetworkConfig().addAddress("172.17.0.3:32438");
+//        return config;
+//    }
 
 //    @Bean
-//    HazelcastInstance hazelcastInstance() {
+//    public ClientConfig config() {
 //        ClientConfig clientConfig = new ClientConfig();
-//        return HazelcastClient.newHazelcastClient(clientConfig);
+//
+//        clientConfig.getNetworkConfig().setSmartRouting(false);
+//        clientConfig.getNetworkConfig().addAddress("172.17.0.3:32438");
+//
+//        return clientConfig;
 //    }
-//    @Bean
-//    public KeyValueOperations keyValueTemplate() {
-//        return new KeyValueTemplate(new HazelcastKeyValueAdapter(hazelcastInstance()));
-//    }
-//    @Bean
-//    public HazelcastKeyValueAdapter hazelcastKeyValueAdapter(@Qualifier("hazelcastInstance") HazelcastInstance hazelcastInstance) {
-//        return new HazelcastKeyValueAdapter(hazelcastInstance);
-//    }
-
-    //@Bean
-    public HazelcastInstance createHazelcastInstance() {
-        HazelcastInstance client = HazelcastClient.newHazelcastClient(getClientConfig());
-        return client;
-    }
-
-    private ClientConfig getClientConfig() {
-        ClientConfig clientConfig = new ClientConfig();
-//        clientConfig.getGroupConfig().setName("dev").setPassword("dev-pass");
-        clientConfig.getNetworkConfig().addAddress("127.0.0.1");
-        return clientConfig;
-    }
-
 }
