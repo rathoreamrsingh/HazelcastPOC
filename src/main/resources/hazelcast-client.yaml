@@ -1,0 +1,7 @@
+hazelcast-client:
+  network:
+    cluster-members:
+      - 127.0.0.1
+    smart-routing: false
+    redo-operation: true
+    connection-timeout: 60000

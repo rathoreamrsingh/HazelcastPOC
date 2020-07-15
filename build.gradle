@@ -16,9 +16,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	// https://mvnrepository.com/artifact/com.hazelcast/hazelcast
-	compile group: 'com.hazelcast', name: 'hazelcast'
+//	compile group: 'com.hazelcast', name: 'hazelcast'
 	// https://mvnrepository.com/artifact/com.hazelcast/hazelcast-spring
-	compile group: 'com.hazelcast', name: 'hazelcast-spring'
+//	compile group: 'com.hazelcast', name: 'hazelcast-spring'
+	compile("com.hazelcast:hazelcast:4.0.1")
+	compile("com.hazelcast:hazelcast-spring:4.0.1")
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

@@ -11,10 +11,10 @@ import java.util.List;
 @Service
 @CacheConfig(cacheNames = "employees")
 public class EmployeeService {
+    // what happens when there is no key value in @Cacheable?
     @Cacheable()
     public List<Employee> getAllEmpService() {
-        List<Employee> employeeList = new ArrayList<>();
-        employeeList = getEmployeesFromDB();
+        List<Employee> employeeList = getEmployeesFromDB();
         return employeeList;
     }
 
