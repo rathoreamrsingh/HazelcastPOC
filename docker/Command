@@ -1,15 +1,15 @@
 ./mc-conf.sh create-user -H=${MC_DATA} -n=admin -p=p@ssw0rd -r=admin
 
 ## Creation of docker build mancenter
-docker build -t mc-built-in-user .
-docker run -it --rm -p 8080:8080 --name mc_server mc-built-in-user
+docker build -t hz-managementcenter:3.12.8 .
+docker run -it --rm -p 8080:8080 --name mc_server hz-managementcenter:3.12.8
 
 
 ## Creation of docker build hazelcast
-docker run --rm --name member1 hazelcast/hazelcast:3.12.6
+docker run --rm -it --name member1 hazelcast/hazelcast:3.12.6
 
-docker build -t hazelcast-custom .
-docker run -it --rm -p 5701:5701 --name member1 --link mc_server:mc_server hazelcast-custom 
+docker build -t hazelcast:3.12.6 .
+docker run -it --rm -p 5701:5701 --name member1 --link mc_server:mc_server hazelcast:3.12.6
 
 
 docker run -it --rm -p 5701:5701 --name member1 hazelcast-custom 
